@@ -1,0 +1,49 @@
+<?php
+
+namespace Acme\TaskBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * Acme\TaskBundle\Entity\Question_Answer
+*
+* @ORM\Entity
+* @ORM\Table(name="Questionstore")
+*/
+class Questionstore
+{
+/**
+
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+private $qid;
+/**
+* @ORM\Column(type="string", length=200)
+*/
+private $q_name;
+/**
+     * @ORM\Column(type="string", length=60)
+     */
+
+private $option_1;
+/**
+     * @ORM\Column(type="string", length=60)
+     */
+private $option_2;
+/**
+     * @ORM\Column(type="string", length=60)
+     */
+private $option_3;
+/**
+     * @ORM\Column(type="string", length=60)
+     */
+private $option_4;
+/**
+     * @ORM\Column(type="string", length=60)
+     */
+private $option_5;
+/**
+     * @ORM\Column(type="string", length=60)
+     */
+private $option_6;
+}

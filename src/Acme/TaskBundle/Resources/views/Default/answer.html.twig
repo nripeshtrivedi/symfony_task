@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+	<style type="text/css"> 
+		#mydiv 
+		{
+			position:absolute;
+			top: 50%;
+			left: 50%;
+			width:30em;
+			height:8em;
+			margin-top: -9em; /*set to a negative number 1/2 of your height*/
+			margin-left: -15em; /*set to a negative number 1/2 of your width*/
+			border: 1px solid #ccc;
+			background-color: #f3f3f3;
+		}
+
+	 </style>
+     <title>Take the survey</title>
+
+ </head>
+<body>
+<div id="mydiv">
+{% if error %}
+    <div>{{ error}}</div>
+{% endif %}
+	<form action="{{ path('answer') }}" method="post">
+			We would like you to take a small survey to make your experience better. Would you like to take it ? <br>
+			<input type="radio" name="answer" value="yes">yes<br>
+			<input type="radio" name="answer" value="no">no<br>
+			<button type="submit" name="submit" value="submit">submit</button> <br>
+		</form>
+	</mydiv>
+ </body>
+</html>

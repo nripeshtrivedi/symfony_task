@@ -1,0 +1,24 @@
+
+
+login:
+    path:     /login
+    defaults: { _controller: AcmeTaskBundle:Default:login }
+login_check:
+    path: /login_check
+register:
+    path:     /register
+    defaults: { _controller: AcmeTaskBundle:Default:new }
+create:
+    path:     /loggedin
+    defaults: { _controller: AcmeTaskBundle:Default:loggedin }
+process:
+    path:     /loggedin2
+    defaults: { _controller: AcmeTaskBundle:Default:process }
+answer:
+    path:     /loggedin_answer
+    defaults: { _controller: AcmeTaskBundle:Default:answer }
+logout:
+    path:     /logout
+    defaults: { _controller: AcmeTaskBundle:Default:logout }
+ 
+

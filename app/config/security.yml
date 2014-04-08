@@ -1,0 +1,39 @@
+security:
+    encoders:
+        Acme\TaskBundle\Entity\User:
+         id: sha256_encoder
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+         administrators:
+            entity: { class: AcmeTaskBundle:User, property: username }
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern:  ^/login$
+            security: false			 
+
+        secured_area:
+            pattern:     ^/l.*$
+            anonymous:    ~
+            form_login:
+                check_path: login_check
+                login_path: login
+                always_use_default_target_path: true
+                default_target_path: /loggedin
+            logout:
+                path:   _demo_logout
+                target: _demo
+            #anonymous: ~
+            #http_basic:
+            #    realm: "Secured Demo Area"
+
+    access_control:
+        - { path: ^/loggedin.*$, roles: ROLE_USER }

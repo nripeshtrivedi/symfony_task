@@ -1,0 +1,7 @@
+parameters:
+#    acme_task.example.class: Acme\TaskBundle\Example
+
+services:
+    sha256_encoder:
+        class: Acme\TaskBundle\Service\Sha256
+
